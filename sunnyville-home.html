@@ -1,0 +1,369 @@
+<!-- SUNNYVILLE SOLAR / PHOTO EDITION
+     One Elementor HTML widget. Disable Astra's header on THIS page only;
+     this block now includes your logo and navigation. Retain Astra's footer.
+     Add your Contact Form 7 Shortcode widget immediately after this block,
+     CSS ID: sv-quote-form. Set parent container padding and gap to zero.
+     ASSETS: replace each assets/filename with its actual WordPress Media URL.
+     The downloadable preview embeds the assets for offline review.
+     Your public WordPress page should use hosted assets, not the preview file.
+-->
+<style>
+#sv-home {
+  --sv-navy:#082b59; --sv-blue:#006fba; --sv-amber:#ffb300;
+  --sv-ink:#172f49; --sv-muted:#506174; --sv-pale:#f3f7fa;
+  --sv-line:#d8e2ea; --sv-white:#fff;
+  color:var(--sv-ink); background:var(--sv-white);
+  font:400 17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;
+  text-align:left; isolation:isolate;
+}
+#sv-home *, #sv-home *::before, #sv-home *::after { box-sizing:border-box; }
+#sv-home [hidden] { display:none !important; }
+#sv-home h1, #sv-home h2, #sv-home h3, #sv-home p,
+#sv-home figure, #sv-home blockquote { margin:0; padding:0; }
+#sv-home h1, #sv-home h2, #sv-home h3 {
+  color:var(--sv-navy); font-family:inherit; font-weight:750;
+  text-transform:none; letter-spacing:-.035em; line-height:1.12;
+}
+#sv-home h1 { font-size:clamp(2.65rem,5.25vw,4.65rem); max-width:13ch; }
+#sv-home h2 { font-size:clamp(2rem,3.5vw,3.1rem); max-width:22ch; }
+#sv-home h3 { font-size:1.35rem; letter-spacing:-.02em; }
+#sv-home p { max-width:62ch; }
+#sv-home a { color:var(--sv-navy); text-underline-offset:5px; }
+#sv-home a:focus-visible, #sv-quote-form :focus-visible {
+  outline:3px solid #006fba; outline-offset:5px;
+}
+#sv-home img { display:block; width:100%; height:100%; object-fit:cover; }
+#sv-home .sv-wrap { width:min(1180px,calc(100% - 64px)); margin-inline:auto; }
+#sv-home .sv-section { padding-block:88px; }
+#sv-home .sv-eyebrow {
+  color:var(--sv-blue); font-size:.76rem; font-weight:750;
+  letter-spacing:.13em; text-transform:uppercase; margin-bottom:18px;
+}
+#sv-home .sv-intro { margin-top:22px; color:var(--sv-muted); }
+#sv-home .sv-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+#sv-home .sv-btn {
+  display:inline-flex; justify-content:center; align-items:center;
+  min-height:52px; padding:14px 22px; border:1px solid transparent;
+  border-radius:5px; background:var(--sv-amber); color:var(--sv-navy);
+  font:700 .94rem/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;
+  text-decoration:none; text-align:center;
+}
+#sv-home .sv-btn:hover { background:#ffc332; }
+#sv-home .sv-btn-outline { background:transparent; border-color:var(--sv-line); }
+#sv-home .sv-btn-outline:hover { background:var(--sv-pale); }
+#sv-home .sv-note { margin-top:16px; font-size:.85rem; color:var(--sv-muted); }
+#sv-home .sv-header { background:white; border-bottom:1px solid var(--sv-line); }
+#sv-home .sv-header-inner { min-height:88px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+#sv-home .sv-brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; }
+#sv-home .sv-logo-frame { position:relative; display:block; width:64px; height:64px; overflow:hidden; }
+#sv-home .sv-logo-frame img { position:absolute; width:104px; height:104px; max-width:none; top:-15px; left:-20px; object-fit:contain; }
+#sv-home .sv-brand-name { font-size:1.32rem; font-weight:800; line-height:1.05; letter-spacing:-.03em; }
+#sv-home .sv-brand-name small { display:block; font-size:.65rem; letter-spacing:.3em; font-weight:700; margin-top:7px; }
+#sv-home .sv-mobile-call { display:none; }
+#sv-home .sv-nav { display:flex; align-items:center; gap:28px; }
+#sv-home .sv-nav a { padding-block:12px; font-weight:650; font-size:.9rem; text-decoration:none; }
+#sv-home .sv-nav a:hover { text-decoration:underline; }
+#sv-home .sv-hero { position:relative; background:var(--sv-navy); overflow:hidden; padding:88px 0 92px; min-height:620px; display:flex; align-items:center; }
+#sv-home .sv-hero > .sv-hero-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 58%; }
+#sv-home .sv-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(4,23,45,.94) 0%,rgba(4,23,45,.82) 38%,rgba(4,23,45,.2) 78%,rgba(4,23,45,.12)); }
+#sv-home .sv-hero-copy { position:relative; z-index:1; }
+#sv-home .sv-hero h1 { color:white; }
+#sv-home .sv-hero .sv-eyebrow { color:#ffd270; }
+#sv-home .sv-hero .sv-intro { color:#edf3f9; max-width:46ch; font-size:1.08rem; }
+#sv-home .sv-hero .sv-note { color:#edf3f9; }
+#sv-home .sv-hero .sv-btn-outline { color:white; border-color:#aab9c9; }
+#sv-home .sv-hero .sv-btn-outline:hover { background:rgba(255,255,255,.12); }
+#sv-home .sv-hero a:focus-visible { outline-color:#ffcf5c; }
+#sv-home .sv-photo { background:#eaf0f5; overflow:hidden; border-radius:6px; }
+#sv-home .sv-portrait { aspect-ratio:3/4; max-width:420px; }
+#sv-home .sv-portrait img { object-position:center 45%; }
+#sv-home .sv-video-detail { margin-top:18px; max-width:420px; }
+#sv-home .sv-video-detail summary { cursor:pointer; color:var(--sv-navy); font-size:.9rem; font-weight:700; min-height:44px; padding-block:10px; }
+#sv-home .sv-video-detail summary:focus-visible { outline:3px solid var(--sv-blue); outline-offset:4px; }
+#sv-home .sv-video-detail video { display:block; width:100%; max-height:560px; background:#082b59; border-radius:6px; }
+#sv-home .sv-video-detail p { margin-top:10px; font-size:.85rem; color:var(--sv-muted); }
+#sv-home figcaption { margin-top:12px; color:var(--sv-muted); font-size:.85rem; }
+#sv-home .sv-trust { background:var(--sv-navy); color:white; }
+#sv-home .sv-trust-list {
+  display:grid; grid-template-columns:repeat(4,1fr); list-style:none;
+  margin:0; padding:30px 0; gap:28px;
+}
+#sv-home .sv-trust-list li { margin:0; padding:0 0 0 18px; border-left:2px solid var(--sv-amber); }
+#sv-home .sv-trust-list strong { display:block; font-size:2.3rem; line-height:1.15; letter-spacing:-.04em; }
+#sv-home .sv-trust-list b { display:block; margin-top:8px; font-size:.93rem; }
+#sv-home .sv-trust-list span { display:block; margin-top:5px; font-size:.82rem; color:#d4e1ef; }
+#sv-home .sv-section-head { display:flex; justify-content:space-between; align-items:end; gap:40px; margin-bottom:40px; }
+#sv-home .sv-section-head > p { max-width:37ch; color:var(--sv-muted); }
+#sv-home .sv-solutions { display:grid; grid-template-columns:repeat(3,1fr); gap:36px; }
+#sv-home .sv-solution { padding-top:26px; border-top:2px solid var(--sv-navy); }
+#sv-home .sv-number { display:block; color:var(--sv-blue); font-size:.8rem; font-weight:750; margin-bottom:24px; }
+#sv-home .sv-solution p { margin-block:18px 22px; color:var(--sv-muted); }
+#sv-home .sv-text-link { display:inline-block; padding-block:10px; font-weight:700; font-size:.92rem; }
+#sv-home .sv-why { background:var(--sv-pale); }
+#sv-home .sv-why-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:80px; align-items:start; }
+#sv-home .sv-reasons { margin:30px 0 0; }
+#sv-home .sv-reasons > div { padding-block:23px; border-bottom:1px solid var(--sv-line); }
+#sv-home .sv-reasons > div:first-child { padding-top:0; }
+#sv-home .sv-reasons dt { font-size:1.13rem; font-weight:750; color:var(--sv-navy); }
+#sv-home .sv-reasons dd { margin:8px 0 0; color:var(--sv-muted); }
+#sv-home .sv-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:30px; list-style:none; margin:40px 0 0; padding:0; }
+#sv-home .sv-steps li { margin:0; padding:24px 0 0; border-top:1px solid var(--sv-line); }
+#sv-home .sv-steps p { margin-top:14px; color:var(--sv-muted); font-size:.95rem; }
+#sv-home .sv-projects { padding-top:0; }
+#sv-home .sv-gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+#sv-home .sv-gallery .sv-photo { height:320px; }
+#sv-home .sv-battery-projects { background:var(--sv-pale); }
+#sv-home .sv-battery-gallery { grid-template-columns:repeat(2,minmax(0,1fr)); max-width:850px; margin-inline:auto; }
+#sv-home .sv-battery-gallery .sv-photo { height:470px; }
+#sv-home .sv-gallery a { display:block; border-radius:6px; }
+#sv-home .sv-gallery .sv-battery img { object-fit:contain; }
+#sv-home .sv-gallery figcaption strong { display:block; color:var(--sv-navy); font-size:1rem; margin-bottom:4px; }
+
+#sv-home .sv-reviews { background:var(--sv-pale); }
+#sv-home .sv-review-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:48px; margin-top:36px; }
+#sv-home blockquote { font-size:1.2rem; color:var(--sv-navy); }
+#sv-home .sv-quote { background:var(--sv-pale); color:var(--sv-navy); scroll-margin-top:90px; padding-bottom:36px; }
+#sv-home .sv-quote h2 { color:var(--sv-navy); max-width:24ch; }
+#sv-home .sv-quote .sv-eyebrow { color:var(--sv-blue); }
+#sv-home .sv-quote p:not(.sv-eyebrow) { margin-top:20px; color:var(--sv-muted); }
+#sv-home .sv-quote a:not(.sv-btn) { color:var(--sv-navy); }
+#sv-home .sv-quote-grid { display:grid; grid-template-columns:1.3fr 1fr; gap:60px; align-items:center; }
+#sv-home .sv-contact { display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
+#sv-home .sv-contact a { padding-block:6px; overflow-wrap:anywhere; }
+#sv-home .sv-mobile { display:none; }
+/* Separate native WordPress form widget: Advanced > CSS ID = sv-quote-form */
+#sv-quote-form {
+  box-sizing:border-box; width:100%; max-width:none; margin-inline:auto;
+  background:#f3f7fa; padding:0 24px 72px; scroll-margin-top:88px;
+  color:#172f49; font:400 16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+#sv-quote-form * { box-sizing:border-box; }
+#sv-quote-form .wpcf7 { max-width:760px; margin-inline:auto; }
+#sv-quote-form .sv-fields { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+#sv-quote-form .sv-fields p { margin:0; }
+#sv-quote-form .sv-wide { grid-column:1/-1; }
+#sv-quote-form label { display:block; font-weight:650; }
+#sv-quote-form input:not([type=submit]):not([type=checkbox]):not([type=hidden]),
+#sv-quote-form select, #sv-quote-form textarea {
+  width:100%; max-width:100%; min-height:50px; margin-top:7px; padding:12px;
+  background:white; color:#172f49; border:1px solid #99adbf; border-radius:4px;
+  font:400 16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+#sv-quote-form textarea { min-height:110px; resize:vertical; }
+#sv-quote-form input[type=submit] {
+  min-height:52px; max-width:100%; white-space:normal; padding:15px 24px;
+  background:#ffb300; color:#082b59; border:0; border-radius:5px;
+  font:700 16px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif; cursor:pointer;
+}
+#sv-quote-form input[type=submit]:disabled { opacity:.6; cursor:wait; }
+#sv-quote-form a { color:#082b59; text-decoration:underline; }
+#sv-quote-form .wpcf7-not-valid-tip { color:#a01818; }
+#sv-quote-form .wpcf7-response-output { margin:24px 0 0; }
+@media (max-width:1024px) {
+  #sv-home .sv-nav { gap:16px; }
+  #sv-home .sv-header .sv-header-call { display:none; }
+  #sv-home .sv-why-grid { gap:40px; }
+  #sv-home .sv-trust-list { grid-template-columns:repeat(2,1fr); }
+  #sv-home .sv-steps { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:767px) {
+  #sv-home .sv-wrap { width:calc(100% - 40px); }
+  #sv-home .sv-section { padding-block:58px; }
+  #sv-home .sv-hero { min-height:650px; padding-block:60px 64px; }
+  #sv-home .sv-hero > .sv-hero-image { object-position:56% center; }
+  #sv-home .sv-hero::after { background:rgba(4,23,45,.78); }
+  #sv-home .sv-header-inner { min-height:78px; }
+  #sv-home .sv-nav { display:none; }
+  #sv-home .sv-desktop-number { display:none; }
+  #sv-home .sv-mobile-call { display:inline; }
+  #sv-home .sv-header .sv-header-call { display:inline-flex; font-size:.8rem; padding:10px 14px; min-height:44px; }
+  #sv-home .sv-brand { gap:6px; }
+  #sv-home .sv-brand-name { font-size:1.1rem; }
+  #sv-home .sv-portrait, #sv-home .sv-video-detail { max-width:100%; }
+  #sv-home .sv-portrait { aspect-ratio:4/5; }
+  #sv-home .sv-gallery .sv-photo { height:auto; aspect-ratio:4/3; }
+  #sv-home .sv-gallery .sv-battery { aspect-ratio:3/4; }
+  #sv-home .sv-trust-list strong { font-size:1.85rem; }
+  #sv-home .sv-quote { padding-bottom:28px; }
+  #sv-home .sv-why-grid,
+  #sv-home .sv-solutions, #sv-home .sv-gallery,
+  #sv-home .sv-review-grid, #sv-home .sv-quote-grid { grid-template-columns:1fr; gap:32px; }
+  #sv-home h1 { max-width:14ch; }
+
+  #sv-home .sv-section-head { display:block; margin-bottom:30px; }
+  #sv-home .sv-section-head > p { margin-top:20px; }
+  #sv-home .sv-gallery figure:last-child { padding-top:0; }
+  #sv-home .sv-projects { padding-top:0; }
+  #sv-home .sv-actions { flex-direction:column; }
+  #sv-home .sv-actions .sv-btn { width:100%; }
+  #sv-home .sv-mobile {
+    display:grid; grid-template-columns:1fr 1fr 1.5fr; gap:8px;
+    position:sticky; top:0; z-index:20; padding:10px 20px;
+    background:white; border-bottom:1px solid var(--sv-line);
+  }
+  #sv-home .sv-mobile a { min-height:44px; padding:10px 8px; font-size:.85rem; }
+  #sv-quote-form .sv-fields { grid-template-columns:1fr; }
+  #sv-quote-form input[type=submit] { width:100%; }
+}
+@media (max-width:380px) {
+  #sv-home .sv-steps { grid-template-columns:1fr; }
+  #sv-home .sv-header .sv-header-call { padding:10px; }
+  #sv-home .sv-wrap { width:calc(100% - 32px); }
+}
+</style>
+
+<div id="sv-home" lang="en-AU">
+  <!-- BRAND / HEADER: disable the Astra header on this page to avoid duplication. -->
+  <header class="sv-header">
+    <div class="sv-wrap sv-header-inner">
+      <a class="sv-brand" href="#sv-home" aria-label="Sunnyville Solar home">
+        <span class="sv-logo-frame"><img src="assets/sunnyville-logo.webp" width="300" height="300" alt="" decoding="async"></span>
+        <span class="sv-brand-name">Sunnyville<small>SOLAR</small></span>
+      </a>
+      <nav class="sv-nav" aria-label="Homepage navigation">
+        <a href="#sv-solutions">Solar &amp; batteries</a><a href="#sv-projects">Our work</a><a href="#sv-about">Meet Gus</a>
+      </nav>
+      <a class="sv-btn sv-btn-outline sv-header-call" href="tel:+61401846864"><span class="sv-desktop-number">Call 0401 846 864</span><span class="sv-mobile-call">Call Gus</span></a>
+    </div>
+  </header>
+  <!-- MOBILE CONTACT BAR: sticky while browsing the homepage, no JavaScript. -->
+  <nav class="sv-mobile" aria-label="Quick contact">
+    <a class="sv-btn sv-btn-outline" href="tel:+61401846864">Call</a>
+    <a class="sv-btn sv-btn-outline" href="sms:+61401846864">Message</a>
+    <a class="sv-btn" href="#sv-quote">Free quote</a>
+  </nav>
+
+  <!-- 01 / HERO: actual uploaded installation photo; no stock imagery. -->
+  <section class="sv-hero" aria-labelledby="sv-hero-title">
+    <img class="sv-hero-image" src="assets/sunnyville-solar-hero.webp" width="1800" height="1013" alt="Rows of solar panels on a residential metal roof, with a rocky hill in the background" fetchpriority="high" decoding="async">
+    <div class="sv-wrap sv-hero-copy">
+      <p class="sv-eyebrow">Townsville &amp; North Queensland</p>
+      <h1 id="sv-hero-title">Solar &amp; batteries.<br>Built around your home.</h1>
+      <p class="sv-intro">Practical advice, professional installation and ongoing support from the local team doing the work.</p>
+      <div class="sv-actions">
+        <a class="sv-btn" href="#sv-quote">Get a Free Solar &amp; Battery Quote</a>
+        <a class="sv-btn sv-btn-outline" href="tel:+61401846864">Talk to Gus</a>
+      </div>
+      <p class="sv-note">No call centre. No subcontracting.</p>
+    </div>
+  </section>
+
+  <!-- 02 / TRUST -->
+  <div class="sv-trust" role="region" aria-label="Sunnyville Solar at a glance">
+    <div class="sv-wrap">
+      <ul class="sv-trust-list">
+        <li><strong>500+</strong><b>Installations completed</b><span>By Gus across North Queensland.</span></li>
+        <li><strong>10+ years</strong><b>Hands-on experience</b><span>Practical solar installation knowledge.</span></li>
+        <li><strong>10 years</strong><b>Workmanship warranty</b><span>Confidence in your installation.</span></li>
+        <li><strong>1–2 weeks</strong><b>Typical installation timeframe</b><span>Subject to site requirements, approvals and availability.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 03 / SOLUTIONS -->
+  <section id="sv-solutions" class="sv-section" aria-labelledby="sv-solutions-title">
+    <div class="sv-wrap">
+      <div class="sv-section-head">
+        <div><p class="sv-eyebrow">Solar + battery solutions</p><h2 id="sv-solutions-title">The right system starts with your home.</h2></div>
+        <p>Your roof, energy use and plans matter. We help you understand the options before you decide.</p>
+      </div>
+      <div class="sv-solutions">
+        <article class="sv-solution"><span class="sv-number" aria-hidden="true">01 / SOLAR</span><h3>Solar systems</h3><p>Put your roof to work. Generate electricity during the day with a system designed around your household and available roof space.</p><a class="sv-text-link" href="#sv-quote">Discuss a solar system <span aria-hidden="true">↗</span></a></article>
+        <article class="sv-solution"><span class="sv-number" aria-hidden="true">02 / STORAGE</span><h3>Battery storage</h3><p>Store solar energy for later. We assess your usage and existing equipment to help you choose a suitable battery.</p><a class="sv-text-link" href="#sv-quote">Explore battery options <span aria-hidden="true">↗</span></a></article>
+        <article class="sv-solution"><span class="sv-number" aria-hidden="true">03 / TOGETHER</span><h3>Solar + battery packages</h3><p>Plan solar and storage together. A coordinated system, sized around how and when your home uses electricity.</p><a class="sv-text-link" href="#sv-quote">Plan your complete system <span aria-hidden="true">↗</span></a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 / MEET GUS + WHY SUNNYVILLE -->
+  <section id="sv-about" class="sv-section sv-why" aria-labelledby="sv-why-title">
+    <div class="sv-wrap sv-why-grid">
+      <div>
+        <figure>
+          <div class="sv-photo sv-portrait"><img src="assets/sunnyville-installer.webp" width="540" height="960" alt="Gus in a Sunnyville Solar shirt beside a SolaX inverter and battery" loading="lazy" decoding="async"></div>
+          <figcaption>Gus · Sunnyville Solar</figcaption>
+        </figure>
+        <details class="sv-video-detail">
+          <summary>Watch the installation clip · 6 seconds</summary>
+          <video controls muted playsinline preload="none" poster="assets/sunnyville-installer.webp" width="540" height="960" aria-describedby="sv-video-description">
+            <source src="assets/sunnyville-battery-clip.mp4" type="video/mp4">
+            Your browser cannot play this video. <a href="assets/sunnyville-battery-clip.mp4">Download the installation clip</a>.
+          </video>
+          <p id="sv-video-description">Silent clip: Gus stands beside an installed SolaX inverter and battery and gestures towards the equipment.</p>
+        </details>
+      </div>
+      <div>
+        <p class="sv-eyebrow">Meet your local installer</p>
+        <h2 id="sv-why-title">Real experience.<br>A familiar face.</h2>
+        <p class="sv-intro">Led by Gus, with 10+ years’ experience and over 500 solar installations completed across North Queensland.</p>
+        <dl class="sv-reasons">
+          <div><dt>Our team does the work</dt><dd>No subcontracting. Speak directly with the team responsible for your installation.</dd></div>
+          <div><dt>25-year panel warranties</dt><dd>Available on selected panels. Your quote will identify the model and its manufacturer’s warranty coverage and terms.</dd></div>
+          <!-- Confirm whether the chosen panels' 25-year coverage is product, performance or both. -->
+          <div><dt>Support after switch-on</dt><dd>System monitoring, local after-sales support and a 10-year workmanship warranty.</dd></div>
+        </dl>
+        <a class="sv-text-link" href="tel:+61401846864">Talk to Gus · 0401 846 864 <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 / PROCESS -->
+  <section class="sv-section" aria-labelledby="sv-process-title">
+    <div class="sv-wrap">
+      <p class="sv-eyebrow">From first call to switch-on</p><h2 id="sv-process-title">Clear steps. Local support.</h2>
+      <ol class="sv-steps">
+        <li><span class="sv-number" aria-hidden="true">01</span><h3>Tell us about your home</h3><p>Send an enquiry or give us a call. Tell us what you have and what you would like to achieve.</p></li>
+        <li><span class="sv-number" aria-hidden="true">02</span><h3>Assess &amp; quote</h3><p>We review your property and energy needs, explain your options and prepare your quote.</p></li>
+        <li><span class="sv-number" aria-hidden="true">03</span><h3>Install &amp; explain</h3><p>Installation is typically available within 1–2 weeks, subject to site requirements, approvals and availability. We confirm your date, install and test the system, then explain how to use it.</p></li>
+        <li><span class="sv-number" aria-hidden="true">04</span><h3>Monitor &amp; support</h3><p>Get help understanding your system's performance and local support when you need it.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 06A / SOLAR PANEL INSTALLATIONS
+       ADD A ROOF: copy one complete figure below; change src, href, alt and caption.
+       Keep the image width/height attributes equal to the source file dimensions.
+       Use real suburb/system details only when confirmed. -->
+  <section id="sv-projects" class="sv-section sv-projects" aria-labelledby="sv-projects-title">
+    <div class="sv-wrap">
+      <div class="sv-section-head"><div><p class="sv-eyebrow">Solar panel installations</p><h2 id="sv-projects-title">Different roofs.<br>The same care.</h2></div><p>A selection of completed rooftop installations. Select a photo for a closer look.</p></div>
+      <div class="sv-gallery">
+        <figure><a class="sv-photo" href="assets/sunnyville-solar-hero.webp" target="_blank" rel="noopener" aria-label="View residential rooftop solar photo in a new tab"><img src="assets/sunnyville-solar-hero.webp" width="1800" height="1013" alt="Rows of solar panels on a residential metal roof, with a rocky hill behind" loading="lazy" decoding="async"></a><figcaption><strong>Residential rooftop solar</strong>Panel rows across a metal roof.</figcaption></figure>
+        <figure><a class="sv-photo" href="assets/sunnyville-rooftop-project.webp" target="_blank" rel="noopener" aria-label="View tropical rooftop solar photo in a new tab"><img src="assets/sunnyville-rooftop-project.webp" width="1100" height="825" alt="Solar panel array on a metal roof surrounded by tropical vegetation" loading="lazy" decoding="async"></a><figcaption><strong>Solar in a tropical setting</strong>A completed rooftop array.</figcaption></figure>
+        <figure><a class="sv-photo" href="assets/sunnyville-rooftop-detail.webp" target="_blank" rel="noopener" aria-label="View rooftop panel detail photo in a new tab"><img src="assets/sunnyville-rooftop-detail.webp" width="705" height="920" alt="Close view of solar panels on a metal roof with hills in the distance" loading="lazy" decoding="async"></a><figcaption><strong>A closer look at the panels</strong>Installation detail on a metal roof.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06B / BATTERY INSTALLATIONS
+       ADD A BATTERY PROJECT: copy one complete figure below and update its image and caption. -->
+  <section id="sv-battery-projects" class="sv-section sv-battery-projects" aria-labelledby="sv-battery-projects-title">
+    <div class="sv-wrap">
+      <div class="sv-section-head"><div><p class="sv-eyebrow">Battery installations</p><h2 id="sv-battery-projects-title">Storage, installed<br>with care.</h2></div><p>A closer look at completed battery and inverter installations.</p></div>
+      <div class="sv-gallery sv-battery-gallery">
+        <figure><a class="sv-photo sv-battery" href="assets/sunnyville-battery-installation.webp" target="_blank" rel="noopener" aria-label="View SolaX battery installation photo in a new tab"><img src="assets/sunnyville-battery-installation.webp" width="800" height="1422" alt="Wall-mounted SolaX inverter above a floor-standing battery" loading="lazy" decoding="async"></a><figcaption><strong>Inverter + battery</strong>A SolaX battery storage installation.</figcaption></figure>
+        <figure><a class="sv-photo sv-battery" href="assets/sunnyville-dual-battery.webp" target="_blank" rel="noopener" aria-label="View dual battery installation photo in a new tab"><img src="assets/sunnyville-dual-battery.webp" width="800" height="1422" alt="Two SolaX inverters installed above two battery stacks" loading="lazy" decoding="async"></a><figcaption><strong>Dual battery installation</strong>Two inverters with paired battery stacks.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 / VERIFIED REVIEWS: replace ALL bracketed text, then remove hidden.
+       Do not add invented star ratings, customer names or aggregate review schema. -->
+  <section class="sv-section sv-reviews" aria-labelledby="sv-reviews-title" hidden>
+    <div class="sv-wrap">
+      <p class="sv-eyebrow">Customer feedback</p><h2 id="sv-reviews-title">From our customers.</h2>
+      <div class="sv-review-grid">
+        <figure><blockquote><p>[Insert a genuine customer review verbatim]</p></blockquote><figcaption>[Customer name as published] · [Review source and date]</figcaption></figure>
+        <figure><blockquote><p>[Insert a genuine customer review verbatim]</p></blockquote><figcaption>[Customer name as published] · [Review source and date]</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 / FINAL CTA: the real WordPress form goes immediately after this block. -->
+  <section id="sv-quote" class="sv-section sv-quote" aria-labelledby="sv-quote-title">
+    <div class="sv-wrap sv-quote-grid">
+      <div><p class="sv-eyebrow">Let's talk about your home</p><h2 id="sv-quote-title">Get a Free Solar &amp; Battery Quote</h2><p>Tell us a little about your property using the form below. We'll contact you to discuss your options.</p></div>
+      <div class="sv-contact"><strong>Prefer a direct conversation?</strong><a href="tel:+61401846864">Call 0401 846 864</a><a href="sms:+61401846864">Send a text message</a><a href="mailto:gustavo.karnas@gmail.com">gustavo.karnas@gmail.com</a><p>Townsville &amp; North Queensland<br>Local service. No call centre.</p></div>
+    </div>
+  </section>
+</div>
