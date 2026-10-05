@@ -1068,6 +1068,39 @@ figcaption { margin-top:10px; color:var(--muted); font-size:.875rem; }
 @media(max-width:380px) { .sv-trust-list { grid-template-columns:1fr; } }
 @media print { .sv-mobile, .sv-menu-toggle { display:none; } }
 
+
+/* Navigation, savings and customer reviews. */
+html{scroll-padding-top:104px}.sv-header{position:sticky;top:0;z-index:40;box-shadow:0 2px 10px #082b590a}.sv-nav{gap:20px}.sv-nav a{white-space:nowrap}.sv-savings{border-top:1px solid var(--line)}.sv-payback-note{max-width:85ch;margin-top:24px;color:var(--muted);font-size:.94rem}
+.sv-review-carousel{margin-top:28px;max-width:940px}.sv-review-controls{display:flex;align-items:center;gap:12px;margin-bottom:20px}.sv-review-controls button{min-height:44px;min-width:44px;padding:9px 15px;border:1px solid #9cadbf;border-radius:5px;background:white;color:var(--navy);cursor:pointer}.sv-review-controls button:hover{background:#e5eef5}.sv-review-controls [data-review=pause]{margin-left:auto}.sv-review-position{font-size:.9rem;font-weight:650}.sv-review-stage{display:grid;gap:20px;overflow:hidden}.sv-review-card{margin:0;padding:32px;background:white;border:1px solid var(--line);border-radius:7px;border-top:4px solid var(--amber);min-width:0}.sv-stars{color:#a76500;font-size:1.55rem;letter-spacing:.12em;margin-bottom:18px}.sv-review-card blockquote{margin:0;color:var(--ink)}.sv-review-card figcaption{margin-top:24px;color:var(--navy);font-weight:750}.sv-review-carousel.is-ready .sv-review-stage{gap:0}.sv-review-carousel.is-ready .sv-review-card{grid-area:1/1;visibility:hidden;pointer-events:none}.sv-review-carousel.is-ready .sv-review-card.is-active{visibility:visible;pointer-events:auto;animation:review-in .45s ease-out}.sv-review-carousel.is-ready .sv-review-card:not(.is-active){opacity:0}@keyframes review-in{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:translateX(0)}}
+@media(max-width:1100px){.sv-header-inner{flex-wrap:wrap;gap:8px}.sv-menu-toggle{display:block}.sv-nav{width:100%;flex-direction:column;align-items:stretch;gap:0;padding:4px 0 16px;max-height:70vh;overflow:auto}.js .sv-nav{display:none}.js .sv-nav.open{display:flex}.sv-nav a{padding:10px}}
+@media(max-width:760px){#sv-quote-form{padding-bottom:56px}.sv-review-card{padding:24px}.sv-review-card blockquote{font-size:1rem}.sv-review-controls{gap:9px}}
+@media(prefers-reduced-motion:reduce){.sv-review-carousel.is-ready .sv-review-card.is-active{animation:none}}
+@media print{.sv-header{position:static}.sv-review-controls{display:none}.sv-review-carousel.is-ready .sv-review-card{grid-area:auto;visibility:visible;opacity:1;break-inside:avoid}}
+
+
+/* Soft review crossfade and side controls. */
+.sv-review-carousel.is-ready{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:14px;align-items:center}
+.sv-review-carousel.is-ready .sv-review-controls{display:contents}
+.sv-review-carousel.is-ready .sv-review-stage{grid-column:2;grid-row:1}
+.sv-review-controls [data-review=prev]{grid-column:1;grid-row:1}
+.sv-review-controls [data-review=next]{grid-column:3;grid-row:1}
+.sv-review-controls [data-review=pause]{grid-column:2;grid-row:2;justify-self:end;margin:0;font-size:.875rem}
+.sv-review-carousel.is-ready .sv-review-card{opacity:0;visibility:hidden;transition:opacity .9s ease,visibility 0s linear .9s;animation:none}
+.sv-review-carousel.is-ready .sv-review-card.is-active{opacity:1;visibility:visible;transition:opacity .9s ease,visibility 0s;animation:none}
+@media(max-width:760px){.sv-review-carousel.is-ready{gap:6px}.sv-review-card{padding:20px 16px}.sv-review-controls button{padding:8px}}
+@media(prefers-reduced-motion:reduce){.sv-review-carousel.is-ready .sv-review-card{transition:none}}
+@media print{.sv-review-carousel.is-ready{display:block}.sv-review-carousel.is-ready .sv-review-controls{display:none}.sv-review-carousel.is-ready .sv-review-card{opacity:1;visibility:visible}}
+
+/* Business rating and softly faded review edges. Rating maintained manually. */
+.sv-google-rating{display:inline-flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:22px;text-decoration:none;color:var(--navy);padding:6px 0}
+.sv-google-rating strong{font-size:1.65rem;line-height:1.2}
+.sv-google-rating .sv-rating-stars{color:#a76500;font-size:1.4rem;letter-spacing:.09em}
+.sv-google-rating>span:last-child{font-size:.94rem;color:var(--muted)}
+.sv-google-rating:hover>span:last-child{text-decoration:underline}
+.sv-google-link{margin-top:18px}
+.sv-review-stage{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%)}
+@media(max-width:760px){.sv-review-card{padding-inline:22px}.sv-review-stage{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 10px,#000 calc(100% - 10px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 10px,#000 calc(100% - 10px),transparent 100%)}}
+@media print{.sv-review-stage{-webkit-mask-image:none;mask-image:none}}
 </style>
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -1087,18 +1120,12 @@ figcaption { margin-top:10px; color:var(--muted); font-size:.875rem; }
         <a href="index.html" aria-current="page">Home</a>
         <a href="solar-panels.html">Solar Panels</a>
         <a href="batteries.html">Batteries</a>
-        <a href="index.html#sv-quote">Get a Quote</a>
+        <a href="installations.html">Our Installations</a>
         <a href="systems-packages.html">System Packages</a>
         <a href="about-us.html">About Us</a>
       </nav>
-      <a class="sv-btn sv-btn-outline sv-header-call" href="tel:+61401846864">Call Gus</a>
     </div>
   </header>
-  <!-- Mobile contact bar, matching the Solar Panels and Battery pages. -->
-  <nav class="sv-mobile" aria-label="Quick contact">
-    <a class="sv-btn sv-btn-outline" href="tel:+61401846864">Call</a>
-    <a class="sv-btn" href="#sv-quote">Free quote</a>
-  </nav>
 
   <!-- Hero uses the same structure and spacing as the Battery page. -->
   <section class="sv-hero" aria-labelledby="sv-hero-title">
@@ -1151,6 +1178,7 @@ figcaption { margin-top:10px; color:var(--muted); font-size:.875rem; }
     </div>
   </section>
 
+<section id="sv-savings" class="sv-section sv-savings" aria-labelledby="sv-savings-title"><div class="sv-wrap"><div class="sv-section-head"><div><p class="sv-eyebrow">Lower bills. Long-term value.</p><h2 id="sv-savings-title">Put your roof to work.<br>Keep more of your money.</h2></div><p>Solar can turn sunshine into savings on your electricity bills. Over time, those savings can recover the upfront cost of your system.</p></div><div class="sv-solutions"><article class="sv-solution"><span class="sv-number">01 / SAVE</span><h3>Buy less electricity</h3><p>Use the power your panels generate to run your home during the day, reducing how much electricity you buy from the grid.</p></article><article class="sv-solution"><span class="sv-number">02 / STORE</span><h3>Use your solar after sunset</h3><p>A battery stores spare solar energy for later, helping reduce grid use in the evening. We assess whether the extra savings justify the battery cost for your household.</p></article><article class="sv-solution"><span class="sv-number">03 / PAYBACK</span><h3>Savings that add up</h3><p>Once accumulated savings cover the system’s upfront cost, further savings can put you ahead financially, allowing for maintenance, finance and replacement costs.</p></article></div><p class="sv-payback-note">Your payback period depends on the installed price, electricity tariffs, roof conditions and how much solar energy you use. We can assess your electricity bills and explain the estimated savings and payback before you decide.</p><a class="sv-text-link" href="#sv-quote">Ask about savings for your home ↗</a></div></section>
   <!-- 04 / MEET GUS + WHY SUNNYVILLE -->
   <section id="sv-about" class="sv-section sv-why" aria-labelledby="sv-why-title">
     <div class="sv-wrap sv-why-grid">
@@ -1170,10 +1198,10 @@ figcaption { margin-top:10px; color:var(--muted); font-size:.875rem; }
       </div>
       <div class="sv-copy">
         <p class="sv-eyebrow">Meet your local installer</p>
-        <h2 id="sv-why-title">Real experience.<br>A familiar face.</h2>
-        <p class="sv-intro">Led by Gus, with 10+ years’ experience and over 500 solar installations completed across North Queensland.</p>
+        <h2 id="sv-why-title">Know who’s installing<br>your system.</h2>
+        <p class="sv-intro">I’m Gus, the owner of Sunnyville Solar and the person who will install your system. You can meet me, ask questions and see my previous work before you decide. With 10+ years’ hands-on experience and over 500 installations across North Queensland, I take personal responsibility for the work.</p>
         <dl class="sv-reasons">
-          <div><dt>Our team does the work</dt><dd>No subcontracting. Speak directly with the team responsible for your installation.</dd></div>
+          <div><dt>A familiar face on installation day</dt><dd>You know who is coming to your home and who to contact afterwards. I install your system with my team, without subcontracting the installation.</dd></div>
           <div><dt>25-year panel warranties</dt><dd>Available on selected panels. Your quote will identify the model and its manufacturer’s warranty coverage and terms.</dd></div>
           <!-- Confirm whether the chosen panels' 25-year coverage is product, performance or both. -->
           <div><dt>Support after switch-on</dt><dd>System monitoring, local after-sales support and a 10-year workmanship warranty.</dd></div>
@@ -1202,7 +1230,7 @@ figcaption { margin-top:10px; color:var(--muted); font-size:.875rem; }
        Use real suburb/system details only when confirmed. -->
   <section id="sv-projects" class="sv-section sv-projects" aria-labelledby="sv-projects-title">
     <div class="sv-wrap">
-      <div class="sv-section-head"><div><p class="sv-eyebrow">Solar panel installations</p><h2 id="sv-projects-title">Different roofs.<br>The same care.</h2></div><p>A selection of completed rooftop installations. Select a photo for a closer look.</p></div>
+      <div class="sv-section-head"><div><p class="sv-eyebrow">Solar panel installations</p><h2 id="sv-projects-title">Different roofs.<br>The same care.</h2></div><p>A selection of completed rooftop installations. Select a photo for a closer look. <a class="sv-text-link" href="installations.html">View our installations and videos ↗</a></p></div>
       <div class="sv-gallery">
         <figure><a class="sv-photo" href="assets/sunnyville-solar-hero.webp" target="_blank" rel="noopener" aria-label="View residential rooftop solar photo in a new tab"><img src="assets/sunnyville-solar-hero.webp" width="1800" height="1013" alt="Rows of solar panels on a residential metal roof, with a rocky hill behind" loading="lazy" decoding="async"></a><figcaption><strong>Residential rooftop solar</strong>Panel rows across a metal roof.</figcaption></figure>
         <figure><a class="sv-photo" href="assets/sunnyville-rooftop-project.webp" target="_blank" rel="noopener" aria-label="View tropical rooftop solar photo in a new tab"><img src="assets/sunnyville-rooftop-project.webp" width="1100" height="825" alt="Solar panel array on a metal roof surrounded by tropical vegetation" loading="lazy" decoding="async"></a><figcaption><strong>Solar in a tropical setting</strong>A completed rooftop array.</figcaption></figure>
@@ -1223,22 +1251,12 @@ figcaption { margin-top:10px; color:var(--muted); font-size:.875rem; }
     </div>
   </section>
 
-  <!-- 07 / VERIFIED REVIEWS: replace ALL bracketed text, then remove hidden.
-       Do not add invented star ratings, customer names or aggregate review schema. -->
-  <section class="sv-section sv-reviews" aria-labelledby="sv-reviews-title" hidden>
-    <div class="sv-wrap">
-      <p class="sv-eyebrow">Customer feedback</p><h2 id="sv-reviews-title">From our customers.</h2>
-      <div class="sv-review-grid">
-        <figure><blockquote><p>[Insert a genuine customer review verbatim]</p></blockquote><figcaption>[Customer name as published] · [Review source and date]</figcaption></figure>
-        <figure><blockquote><p>[Insert a genuine customer review verbatim]</p></blockquote><figcaption>[Customer name as published] · [Review source and date]</figcaption></figure>
-      </div>
-    </div>
-  </section>
+<section class="sv-section sv-reviews" aria-labelledby="sv-reviews-title"><div class="sv-wrap"><p class="sv-eyebrow">Customer feedback</p><h2 id="sv-reviews-title">From our customers.</h2><a class="sv-google-rating" href="https://www.google.com/search?q=sunnyville+solar&amp;rlz=1C1VIQF_en-GBAU950AU950&amp;oq=sunnyvi&amp;gs_lcrp=EgZjaHJvbWUqCAgBEEUYJxg7MgYIABBFGDwyCAgBEEUYJxg7MgYIAhBFGDkyBggDECMYJzINCAQQLhivARjHARiABDIGCAUQRRg8MgYIBhBFGD0yBggHEEUYPNIBCDMzNDNqMGo0qAIAsAIB&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8#" target="_blank" rel="noopener noreferrer" aria-label="Sunnyville Solar: 5.0 out of 5 on Google. View on Google, opens in a new tab"><strong>5.0</strong><span class="sv-rating-stars" aria-hidden="true">★★★★★</span><span>on Google</span></a><div class="sv-review-carousel" role="region" aria-roledescription="carousel" aria-label="Customer reviews"><div class="sv-review-controls" hidden><button type="button" data-review="prev" aria-label="Previous review">←</button><button type="button" data-review="next" aria-label="Next review">→</button><button type="button" data-review="pause">Pause</button></div><div class="sv-review-stage"><figure class="sv-review-card" role="group" aria-roledescription="slide" aria-label="1 of 4"><div class="sv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote><p>I met Gus from Sunnyville when I purchased my house. After settling in, we decided to look at solar to help reduce our electricity costs.</p><p>I contacted three different companies for quotes and decided to go with Sunnyville Solar. Gus, the owner, was amazing. He explained everything clearly, including the costs, the options and the timeline. Everything was completed on time and at the agreed cost.</p><p>I would highly recommend Sunnyville Solar to anyone considering solar. Give Gus a call and have a chat with him.</p></blockquote><figcaption>Steve T. – Annandale</figcaption></figure><figure class="sv-review-card" role="group" aria-roledescription="slide" aria-label="2 of 4"><div class="sv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote><p>Sunnyville Solar gave us a fixed price to install our 23.5 kWh battery, 6.5 kW of new solar panels and a new inverter, which also connected our existing 4.8 kW solar system.</p><p>Gus gave us an installation date, arrived right on time at 7:30am, and had the installation completed by 3pm that day.</p><p>Thank you, Gus, for your professional service. We would give Sunnyville Solar 10 out of 10 and would happily recommend Gus to others.</p></blockquote><figcaption>Regards, Graham &amp; Ruth Mason - Mount Louisa</figcaption></figure><figure class="sv-review-card" role="group" aria-roledescription="slide" aria-label="3 of 4"><div class="sv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote><p>Very professional, efficient and affordable. I purchased 4 systems for my investment properties. Glad I chose Sunnyville Solar as they are local and did an amazing job.</p></blockquote><figcaption>Amy – Gulliver</figcaption></figure><figure class="sv-review-card" role="group" aria-roledescription="slide" aria-label="4 of 4"><div class="sv-stars" role="img" aria-label="5 out of 5 stars">★★★★★</div><blockquote><p>Great service, great crew!<br>If you need a job well done, book Sunnyville Solar :)</p></blockquote><figcaption>Lily - Shaw</figcaption></figure></div></div><p class="sv-google-link"><a class="sv-text-link" href="https://www.google.com/search?q=sunnyville+solar&amp;rlz=1C1VIQF_en-GBAU950AU950&amp;oq=sunnyvi&amp;gs_lcrp=EgZjaHJvbWUqCAgBEEUYJxg7MgYIABBFGDwyCAgBEEUYJxg7MgYIAhBFGDkyBggDECMYJzINCAQQLhivARjHARiABDIGCAUQRRg8MgYIBhBFGD0yBggHEEUYPNIBCDMzNDNqMGo0qAIAsAIB&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8#" target="_blank" rel="noopener noreferrer">Read our reviews on Google <span aria-hidden="true">↗</span></a></p></div></section>
 
   <!-- 08 / FINAL CTA: the real WordPress form goes immediately after this block. -->
   <section id="sv-quote" class="sv-section sv-quote" aria-labelledby="sv-quote-title">
     <div class="sv-wrap sv-quote-grid">
-      <div><p class="sv-eyebrow">Let's talk about your home</p><h2 id="sv-quote-title">Get a Free Solar &amp; Battery Quote</h2><p>Tell us a little about your property using the form below. We'll contact you to discuss your options.</p></div>
+      <div><p class="sv-eyebrow">Let's talk about your home</p><h2 id="sv-quote-title">Solar &amp; Battery Quote</h2><p>Tell us a little about your property using the form below. We'll contact you to discuss your options.</p></div>
       <div class="sv-contact"><strong>Prefer a direct conversation?</strong><a href="tel:+61401846864">Call 0401 846 864</a><a href="sms:+61401846864">Send a text message</a><a href="mailto:gustavo.karnas@gmail.com">gustavo.karnas@gmail.com</a><p>Townsville &amp; North Queensland<br>Local service. No call centre.</p></div>
     </div>
   </section>
@@ -1314,4 +1332,26 @@ if (quoteForm) {
     }
   });
 }
+
+// Reviews: rotate only while visible; respect motion preferences and reading time.
+(()=>{
+const carousel=document.querySelector('.sv-review-carousel');
+const cards=[...carousel.querySelectorAll('.sv-review-card')],controls=carousel.querySelector('.sv-review-controls'),pause=controls.querySelector('[data-review=pause]');
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+let current=0,timer,paused=reduced.matches,hover=false,focused=false,visible=false;
+function schedule(){clearTimeout(timer);if(!paused&&!hover&&!focused&&visible&&!document.hidden)timer=setTimeout(()=>show(current+1),5000);}
+function show(n){current=(n+cards.length)%cards.length;cards.forEach((card,i)=>{card.classList.toggle('is-active',i===current);card.setAttribute('aria-hidden',String(i!==current));});schedule();}
+function label(){pause.textContent=paused?'Play':'Pause';pause.setAttribute('aria-label',paused?'Start automatic review rotation':'Pause automatic review rotation');}
+function manual(n){paused=true;label();show(n);}
+controls.hidden=false;carousel.classList.add('is-ready');label();show(0);
+controls.addEventListener('click',e=>{const action=e.target.closest('button')?.dataset.review;if(action==='prev')manual(current-1);if(action==='next')manual(current+1);if(action==='pause'){paused=!paused;label();schedule();}});
+carousel.addEventListener('mouseenter',()=>{hover=true;schedule();});carousel.addEventListener('mouseleave',()=>{hover=false;schedule();});
+carousel.addEventListener('focusin',()=>{focused=true;schedule();});carousel.addEventListener('focusout',()=>{setTimeout(()=>{focused=carousel.contains(document.activeElement);schedule();},0);});
+document.addEventListener('visibilitychange',schedule);
+new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule();},{threshold:.25}).observe(carousel);
+reduced.addEventListener('change',()=>{if(reduced.matches){paused=true;label();schedule();}});
+let startX=0,startY=0;carousel.addEventListener('touchstart',e=>{startX=e.changedTouches[0].clientX;startY=e.changedTouches[0].clientY;},{passive:true});carousel.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX,dy=e.changedTouches[0].clientY-startY;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)manual(current+(dx<0?1:-1));},{passive:true});
+})();
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mainNav.classList.contains('open')){mainNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.focus();}});
+
 </script></body></html>
