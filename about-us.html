@@ -18,17 +18,48 @@ a{color:var(--navy);text-underline-offset:5px}.wrap{width:min(1180px,calc(100% -
 .photo{border-radius:7px;overflow:hidden;background:#eaf0f5}.photo img{display:block;width:100%;height:auto}.footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.875rem}.footer .wrap{display:flex;justify-content:space-between;gap:20px}
 @media(max-width:1050px){.nav{gap:12px}.nav a{font-size:.8rem}.header-call{display:none}}
 @media(max-width:760px){.wrap{width:calc(100% - 40px)}.header-inner{min-height:78px;flex-wrap:wrap}.menu-toggle{display:block}.nav{width:100%;flex-direction:column;align-items:stretch;gap:0;padding-bottom:14px}.js .nav{display:none}.js .nav.open{display:flex}.nav a{padding:10px;font-size:.9rem}.grid,.cards{grid-template-columns:1fr}.section{padding:58px 0}.hero{padding:48px 0}.actions .btn{width:100%}.footer .wrap{flex-direction:column}}
-</style></head><body>
-<header class="header"><div class="wrap header-inner">
-<a class="brand" href="index.html" aria-label="Sunnyville Solar home">
-<span class="logo-frame"><img src="assets/sunnyville-logo.png" alt="" width="104" height="104"></span>
-<span class="brand-name">Sunnyville<small>SOLAR</small></span></a>
-<button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" type="button">Menu</button>
-<nav id="main-nav" class="nav" aria-label="Main navigation">
-<a href="index.html">Home</a><a href="solar-panels.html">Solar Panels</a><a href="batteries.html">Batteries</a><a href="index.html#sv-quote">Get a Quote</a><a href="systems-packages.html">System Packages</a><a href="about-us.html">About Us</a>
-</nav>
-<a class="btn outline header-call" href="tel:+61401846864">Call 0401 846 864</a>
-</div></header>
+</style>
+<style id="sv-shared-header-style">
+html{scroll-padding-top:104px}
+#sv-shared-header{position:sticky;top:0;z-index:1000;width:100%;margin:0;padding:0;background:#fff;border:0;border-bottom:1px solid #d8e2ea;box-shadow:0 2px 10px #082b590a;color:#082b59;font:400 17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:left;letter-spacing:normal}
+#sv-shared-header *{box-sizing:border-box}
+#sv-shared-header .sv-shared-wrap{width:min(1180px,calc(100% - 64px));margin:0 auto;padding:0}
+#sv-shared-header .sv-shared-inner{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+#sv-shared-header .sv-shared-brand{display:flex;align-items:center;gap:12px;flex-shrink:0;padding:0;margin:0;color:#082b59;text-decoration:none;border:0;background:none}
+#sv-shared-header .sv-shared-logo{position:relative;display:block;width:64px;height:64px;overflow:hidden;flex-shrink:0}
+#sv-shared-header .sv-shared-logo img{position:absolute;display:block;width:104px;max-width:none;height:104px;top:-15px;left:-20px;margin:0;padding:0;border:0;border-radius:0;object-fit:contain}
+#sv-shared-header .sv-shared-name{font-size:1.32rem;font-weight:800;line-height:1.05;letter-spacing:-.03em;color:#082b59}
+#sv-shared-header .sv-shared-name small{display:block;font-size:.65rem;font-weight:800;line-height:1.05;letter-spacing:.3em;margin-top:7px;color:#082b59}
+#sv-shared-header .sv-shared-links{display:flex;gap:20px;align-items:center;margin:0;padding:0;border:0;background:white}
+#sv-shared-header .sv-shared-links a{display:block;font-size:.9rem;font-weight:650;line-height:1.65;letter-spacing:normal;color:#082b59;text-decoration:none;text-transform:none;white-space:nowrap;padding:12px 0;margin:0;border:0;background:none;text-underline-offset:5px}
+#sv-shared-header .sv-shared-links a:hover,#sv-shared-header .sv-shared-links a[aria-current="page"]{text-decoration:underline;text-decoration-color:#ffb300;text-decoration-thickness:3px}
+#sv-shared-header .sv-shared-toggle{display:none;font:inherit;background:#fff;border:1px solid #d8e2ea;border-radius:5px;min-height:44px;min-width:66px;padding:8px 14px;margin:0;color:#082b59;cursor:pointer;box-shadow:none}
+#sv-shared-header a:focus-visible,#sv-shared-header button:focus-visible{outline:3px solid #006fba;outline-offset:5px}
+@media(max-width:1200px){#sv-shared-header .sv-shared-inner{flex-wrap:wrap;gap:8px}#sv-shared-header .sv-shared-toggle{display:block}#sv-shared-header .sv-shared-links{width:100%;flex-direction:column;align-items:stretch;gap:0;padding:4px 0 16px;max-height:70vh;overflow:auto}.js #sv-shared-header .sv-shared-links{display:none}.js #sv-shared-header .sv-shared-links.open{display:flex}#sv-shared-header .sv-shared-links a{padding:10px}}
+@media(max-width:760px){#sv-shared-header .sv-shared-wrap{width:calc(100% - 40px)}#sv-shared-header .sv-shared-inner{min-height:78px}#sv-shared-header .sv-shared-brand{gap:6px}#sv-shared-header .sv-shared-name{font-size:1.1rem}}
+@media print{#sv-shared-header{position:static}#sv-shared-header .sv-shared-toggle{display:none}.js #sv-shared-header .sv-shared-links{display:none}}
+</style>
+<script>document.documentElement.classList.add("js");</script></head><body>
+<header id="sv-shared-header" class="sv-shared-header">
+    <div class="sv-shared-wrap sv-shared-inner">
+      <a class="sv-shared-brand" href="index.html" aria-label="Sunnyville Solar home">
+        <span class="sv-shared-logo"><img src="assets/sunnyville-logo.png" width="300" height="300" alt="" decoding="async"></span>
+        <span class="sv-shared-name">Sunnyville<small>SOLAR</small></span>
+      </a>
+      <button class="sv-shared-toggle" type="button" aria-expanded="false" aria-controls="sv-shared-nav">Menu</button>
+      <nav id="sv-shared-nav" class="sv-shared-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="solar-panels.html">Solar Panels</a>
+        <a href="batteries.html">Batteries</a>
+        <a href="installations.html">Our Installations</a>
+        <a href="solar-calculator.html">Savings Calculator</a>
+        <a href="systems-packages.html">System Packages</a>
+        <a href="about-us.html" aria-current="page">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+
 
 <main>
 <section class="hero"><div class="wrap"><p class="eyebrow">About Sunnyville Solar</p><h1>Local advice. Hands-on installation. Support after switch-on.</h1>
@@ -47,4 +78,12 @@ a{color:var(--navy);text-underline-offset:5px}.wrap{width:min(1180px,calc(100% -
 <div><h3>What you can expect</h3><ul class="checks"><li>Clear solar and battery options</li><li>Site-specific system design</li><li>Direct contact with the installation team</li><li>Equipment and warranty details identified in your quote</li><li>System handover and ongoing support</li></ul></div></div></section>
 
 <section class="section pale"><div class="wrap"><p class="eyebrow">Talk to Sunnyville</p><h2>Tell us about your home and what you want to achieve.</h2><div class="actions"><a class="btn" href="index.html#sv-quote">Get a Free Solar &amp; Battery Quote</a><a class="btn outline" href="tel:+61401846864">0401 846 864</a></div></div></section>
-</main><footer class="footer"><div class="wrap"><span>Sunnyville Solar · Townsville &amp; North Queensland</span><span><a href="index.html">Home</a></span></div></footer><script>document.documentElement.classList.add('js');const b=document.querySelector('.menu-toggle'),n=document.querySelector('#main-nav');if(b&&n){b.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));});}</script></body></html>
+</main><footer class="footer"><div class="wrap"><span>Sunnyville Solar · Townsville &amp; North Queensland</span><span><a href="index.html">Home</a></span></div></footer><script>document.documentElement.classList.add('js');</script><script id="sv-shared-header-script">
+(()=>{const root=document.getElementById('sv-shared-header'),button=root.querySelector('.sv-shared-toggle'),nav=root.querySelector('.sv-shared-links');
+function close(){nav.classList.remove('open');button.setAttribute('aria-expanded','false');}
+button.addEventListener('click',()=>{const open=nav.classList.toggle('open');button.setAttribute('aria-expanded',String(open));});
+nav.addEventListener('click',e=>{if(e.target.closest('a'))close();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){close();button.focus();}});
+document.addEventListener('click',e=>{if(!root.contains(e.target))close();});
+})();
+</script></body></html>

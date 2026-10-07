@@ -7,6 +7,54 @@
 <style>
 body{margin:0;background:#f3f7fa;color:#172f49;font:400 17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;display:grid;min-height:100vh;place-items:center;padding:24px;box-sizing:border-box}.card{max-width:680px;background:#fff;padding:48px;border-radius:6px;border-top:5px solid #ffb300;box-shadow:0 12px 40px rgba(8,43,89,.08)}h1{margin:0;color:#082b59;font-size:clamp(2rem,5vw,3rem);line-height:1.1}p{margin:20px 0 0}.btn{display:inline-block;margin-top:28px;padding:14px 22px;background:#ffb300;color:#082b59;text-decoration:none;font-weight:700;border-radius:5px}
 </style>
-</head>
-<body><main class="card"><h1>Thanks — we've received your enquiry.</h1><p>Sunnyville Solar will contact you to discuss your solar or battery options.</p><a class="btn" href="/">Back to Sunnyville Solar</a></main></body>
+
+<style id="sv-shared-header-style">
+html{scroll-padding-top:104px}
+#sv-shared-header{position:sticky;top:0;z-index:1000;width:100%;margin:0;padding:0;background:#fff;border:0;border-bottom:1px solid #d8e2ea;box-shadow:0 2px 10px #082b590a;color:#082b59;font:400 17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:left;letter-spacing:normal}
+#sv-shared-header *{box-sizing:border-box}
+#sv-shared-header .sv-shared-wrap{width:min(1180px,calc(100% - 64px));margin:0 auto;padding:0}
+#sv-shared-header .sv-shared-inner{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+#sv-shared-header .sv-shared-brand{display:flex;align-items:center;gap:12px;flex-shrink:0;padding:0;margin:0;color:#082b59;text-decoration:none;border:0;background:none}
+#sv-shared-header .sv-shared-logo{position:relative;display:block;width:64px;height:64px;overflow:hidden;flex-shrink:0}
+#sv-shared-header .sv-shared-logo img{position:absolute;display:block;width:104px;max-width:none;height:104px;top:-15px;left:-20px;margin:0;padding:0;border:0;border-radius:0;object-fit:contain}
+#sv-shared-header .sv-shared-name{font-size:1.32rem;font-weight:800;line-height:1.05;letter-spacing:-.03em;color:#082b59}
+#sv-shared-header .sv-shared-name small{display:block;font-size:.65rem;font-weight:800;line-height:1.05;letter-spacing:.3em;margin-top:7px;color:#082b59}
+#sv-shared-header .sv-shared-links{display:flex;gap:20px;align-items:center;margin:0;padding:0;border:0;background:white}
+#sv-shared-header .sv-shared-links a{display:block;font-size:.9rem;font-weight:650;line-height:1.65;letter-spacing:normal;color:#082b59;text-decoration:none;text-transform:none;white-space:nowrap;padding:12px 0;margin:0;border:0;background:none;text-underline-offset:5px}
+#sv-shared-header .sv-shared-links a:hover,#sv-shared-header .sv-shared-links a[aria-current="page"]{text-decoration:underline;text-decoration-color:#ffb300;text-decoration-thickness:3px}
+#sv-shared-header .sv-shared-toggle{display:none;font:inherit;background:#fff;border:1px solid #d8e2ea;border-radius:5px;min-height:44px;min-width:66px;padding:8px 14px;margin:0;color:#082b59;cursor:pointer;box-shadow:none}
+#sv-shared-header a:focus-visible,#sv-shared-header button:focus-visible{outline:3px solid #006fba;outline-offset:5px}
+@media(max-width:1200px){#sv-shared-header .sv-shared-inner{flex-wrap:wrap;gap:8px}#sv-shared-header .sv-shared-toggle{display:block}#sv-shared-header .sv-shared-links{width:100%;flex-direction:column;align-items:stretch;gap:0;padding:4px 0 16px;max-height:70vh;overflow:auto}.js #sv-shared-header .sv-shared-links{display:none}.js #sv-shared-header .sv-shared-links.open{display:flex}#sv-shared-header .sv-shared-links a{padding:10px}}
+@media(max-width:760px){#sv-shared-header .sv-shared-wrap{width:calc(100% - 40px)}#sv-shared-header .sv-shared-inner{min-height:78px}#sv-shared-header .sv-shared-brand{gap:6px}#sv-shared-header .sv-shared-name{font-size:1.1rem}}
+@media print{#sv-shared-header{position:static}#sv-shared-header .sv-shared-toggle{display:none}.js #sv-shared-header .sv-shared-links{display:none}}
+</style>
+<style>body{display:block;min-height:100vh;padding:0}.card{box-sizing:border-box;width:min(680px,calc(100% - 40px));margin:64px auto}@media(max-width:760px){.card{padding:28px;margin:40px auto}}</style><script>document.documentElement.classList.add("js");</script></head>
+<body>
+<header id="sv-shared-header" class="sv-shared-header">
+    <div class="sv-shared-wrap sv-shared-inner">
+      <a class="sv-shared-brand" href="index.html" aria-label="Sunnyville Solar home">
+        <span class="sv-shared-logo"><img src="assets/sunnyville-logo.png" width="300" height="300" alt="" decoding="async"></span>
+        <span class="sv-shared-name">Sunnyville<small>SOLAR</small></span>
+      </a>
+      <button class="sv-shared-toggle" type="button" aria-expanded="false" aria-controls="sv-shared-nav">Menu</button>
+      <nav id="sv-shared-nav" class="sv-shared-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="solar-panels.html">Solar Panels</a>
+        <a href="batteries.html">Batteries</a>
+        <a href="installations.html">Our Installations</a>
+        <a href="solar-calculator.html">Savings Calculator</a>
+        <a href="systems-packages.html">System Packages</a>
+        <a href="about-us.html">About Us</a>
+      </nav>
+    </div>
+  </header>
+<main class="card"><h1>Thanks — we've received your enquiry.</h1><p>Sunnyville Solar will contact you to discuss your solar or battery options.</p><a class="btn" href="/">Back to Sunnyville Solar</a></main><script id="sv-shared-header-script">
+(()=>{const root=document.getElementById('sv-shared-header'),button=root.querySelector('.sv-shared-toggle'),nav=root.querySelector('.sv-shared-links');
+function close(){nav.classList.remove('open');button.setAttribute('aria-expanded','false');}
+button.addEventListener('click',()=>{const open=nav.classList.toggle('open');button.setAttribute('aria-expanded',String(open));});
+nav.addEventListener('click',e=>{if(e.target.closest('a'))close();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){close();button.focus();}});
+document.addEventListener('click',e=>{if(!root.contains(e.target))close();});
+})();
+</script></body>
 </html>

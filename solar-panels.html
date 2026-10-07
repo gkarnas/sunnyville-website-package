@@ -13,22 +13,50 @@
 @media(max-width:760px){.wrap{width:calc(100% - 40px)}.header-inner{min-height:78px;flex-wrap:wrap;gap:8px}.brand{gap:6px}.brand-name{font-size:1.1rem}.menu-toggle{display:block}.nav{width:100%;flex-direction:column;align-items:stretch;gap:0;padding:4px 0 16px}.js .nav{display:none}.js .nav.open{display:flex}.nav a{padding:10px}.hero{padding:27px 0 40px}.hero-grid{grid-template-columns:1fr;gap:24px}h1{font-size:clamp(2.5rem,9.5vw,3.8rem)}.hero-label{margin-top:20px}.story-nav{grid-template-columns:repeat(3,1fr);padding:12px 0}.story-nav a{padding:12px 6px;min-height:44px}.section{padding:58px 0}.split,.split.reverse,.section-head,.tilt-bottom,.tech-grid,.premium,.cta .wrap{grid-template-columns:1fr;gap:28px}.split>figure{order:2}.copy{order:1}.section-head{margin-bottom:25px}.tech-grid{gap:16px}.product-space{min-height:230px;padding:24px}.placeholder{min-height:190px}.premium-copy{padding:28px}.premium{gap:0}.premium-copy{order:-1}.tilt-bottom{margin-top:25px}.seasons{gap:20px}.cta{padding:54px 0}.cta .btn{width:100%}.cta-actions{align-items:stretch;text-align:center}.footer{padding-bottom:95px}.footer .wrap{flex-direction:column;gap:12px}.mobile-contact{display:grid;grid-template-columns:1fr 2fr;gap:10px;position:fixed;bottom:0;left:0;right:0;background:white;padding:10px 20px max(10px,env(safe-area-inset-bottom));border-top:1px solid var(--line);z-index:30}.mobile-contact .btn{min-height:44px;padding:10px;font-size:.875rem}.caption{font-size:.875rem}.actions .btn{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{.mobile-contact,.menu-toggle,.story-nav{display:none}.section{padding:30px 0}.wrap{width:100%}.media{break-inside:avoid}}
 </style>
-</head>
+
+<style id="sv-shared-header-style">
+html{scroll-padding-top:104px}
+#sv-shared-header{position:sticky;top:0;z-index:1000;width:100%;margin:0;padding:0;background:#fff;border:0;border-bottom:1px solid #d8e2ea;box-shadow:0 2px 10px #082b590a;color:#082b59;font:400 17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;text-align:left;letter-spacing:normal}
+#sv-shared-header *{box-sizing:border-box}
+#sv-shared-header .sv-shared-wrap{width:min(1180px,calc(100% - 64px));margin:0 auto;padding:0}
+#sv-shared-header .sv-shared-inner{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+#sv-shared-header .sv-shared-brand{display:flex;align-items:center;gap:12px;flex-shrink:0;padding:0;margin:0;color:#082b59;text-decoration:none;border:0;background:none}
+#sv-shared-header .sv-shared-logo{position:relative;display:block;width:64px;height:64px;overflow:hidden;flex-shrink:0}
+#sv-shared-header .sv-shared-logo img{position:absolute;display:block;width:104px;max-width:none;height:104px;top:-15px;left:-20px;margin:0;padding:0;border:0;border-radius:0;object-fit:contain}
+#sv-shared-header .sv-shared-name{font-size:1.32rem;font-weight:800;line-height:1.05;letter-spacing:-.03em;color:#082b59}
+#sv-shared-header .sv-shared-name small{display:block;font-size:.65rem;font-weight:800;line-height:1.05;letter-spacing:.3em;margin-top:7px;color:#082b59}
+#sv-shared-header .sv-shared-links{display:flex;gap:20px;align-items:center;margin:0;padding:0;border:0;background:white}
+#sv-shared-header .sv-shared-links a{display:block;font-size:.9rem;font-weight:650;line-height:1.65;letter-spacing:normal;color:#082b59;text-decoration:none;text-transform:none;white-space:nowrap;padding:12px 0;margin:0;border:0;background:none;text-underline-offset:5px}
+#sv-shared-header .sv-shared-links a:hover,#sv-shared-header .sv-shared-links a[aria-current="page"]{text-decoration:underline;text-decoration-color:#ffb300;text-decoration-thickness:3px}
+#sv-shared-header .sv-shared-toggle{display:none;font:inherit;background:#fff;border:1px solid #d8e2ea;border-radius:5px;min-height:44px;min-width:66px;padding:8px 14px;margin:0;color:#082b59;cursor:pointer;box-shadow:none}
+#sv-shared-header a:focus-visible,#sv-shared-header button:focus-visible{outline:3px solid #006fba;outline-offset:5px}
+@media(max-width:1200px){#sv-shared-header .sv-shared-inner{flex-wrap:wrap;gap:8px}#sv-shared-header .sv-shared-toggle{display:block}#sv-shared-header .sv-shared-links{width:100%;flex-direction:column;align-items:stretch;gap:0;padding:4px 0 16px;max-height:70vh;overflow:auto}.js #sv-shared-header .sv-shared-links{display:none}.js #sv-shared-header .sv-shared-links.open{display:flex}#sv-shared-header .sv-shared-links a{padding:10px}}
+@media(max-width:760px){#sv-shared-header .sv-shared-wrap{width:calc(100% - 40px)}#sv-shared-header .sv-shared-inner{min-height:78px}#sv-shared-header .sv-shared-brand{gap:6px}#sv-shared-header .sv-shared-name{font-size:1.1rem}}
+@media print{#sv-shared-header{position:static}#sv-shared-header .sv-shared-toggle{display:none}.js #sv-shared-header .sv-shared-links{display:none}}
+</style>
+<script>document.documentElement.classList.add("js");</script></head>
 <body>
+<header id="sv-shared-header" class="sv-shared-header">
+    <div class="sv-shared-wrap sv-shared-inner">
+      <a class="sv-shared-brand" href="index.html" aria-label="Sunnyville Solar home">
+        <span class="sv-shared-logo"><img src="assets/sunnyville-logo.png" width="300" height="300" alt="" decoding="async"></span>
+        <span class="sv-shared-name">Sunnyville<small>SOLAR</small></span>
+      </a>
+      <button class="sv-shared-toggle" type="button" aria-expanded="false" aria-controls="sv-shared-nav">Menu</button>
+      <nav id="sv-shared-nav" class="sv-shared-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="solar-panels.html" aria-current="page">Solar Panels</a>
+        <a href="batteries.html">Batteries</a>
+        <a href="installations.html">Our Installations</a>
+        <a href="solar-calculator.html">Savings Calculator</a>
+        <a href="systems-packages.html">System Packages</a>
+        <a href="about-us.html">About Us</a>
+      </nav>
+    </div>
+  </header>
+
 <a class="skip" href="#main">Skip to content</a>
-<header class="header"><div class="wrap header-inner">
-<a class="brand" href="index.html" aria-label="Sunnyville Solar home"><span class="logo-frame"><img src="assets/solar-panels/logo.webp" width="1024" height="1024" alt=""></span><span class="brand-name">Sunnyville<small>SOLAR</small></span></a>
-<button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
-<nav id="main-nav" class="nav" aria-label="Main navigation">
-<a href="index.html">Home</a>
-<a href="solar-panels.html" aria-current="page">Solar Panels</a>
-<a href="batteries.html">Batteries</a>
-<a href="index.html#sv-quote">Get a Quote</a>
-<a href="systems-packages.html">System Packages</a>
-<a href="about-us.html">About Us</a>
-</nav>
-<a class="btn outline header-call" href="tel:+61401846864">Call 0401 846 864</a>
-</div></header>
+
 <main id="main">
 <section class="hero"><div class="wrap"><div class="breadcrumb"><a href="index.html">Home</a> / Solar panels</div><div class="hero-grid"><div><p class="eyebrow">Solar panels · Townsville &amp; North Queensland</p><h1>Solar panels designed around <span>your home.</span></h1><p class="hero-label">Five things that shape a better solar system.</p></div><div><p class="hero-intro">Solar isn’t just about choosing a panel and counting how many fit. Your roof, future electricity use and panel technology all affect how your system performs.</p><div class="actions"><a class="btn" href="index.html#sv-quote">Get a Free Solar &amp; Battery Quote</a></div></div></div></div></section>
 <nav class="wrap story-nav" aria-label="Explore the five solar design factors"><a href="#size"><span>01</span>System size</a><a href="#direction"><span>02</span>Direction</a><a href="#angle"><span>03</span>Angle &amp; dirt</a><a href="#shade"><span>04</span>Shade</a><a href="#technology"><span>05</span>Panel technology</a></nav>
@@ -49,13 +77,18 @@
 <dialog class="dialog" aria-label="Enlarged solar illustration"><button type="button">Close image</button><img alt=""></dialog>
 <script>
 document.documentElement.classList.add('js');
-const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('#main-nav');
-menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));nav.classList.toggle('open',open);});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.focus();}});
 const dialog=document.querySelector('dialog'),large=dialog.querySelector('img');
 document.querySelectorAll('[data-enlarge]').forEach(link=>link.addEventListener('click',e=>{if(typeof dialog.showModal!=='function')return;e.preventDefault();large.src=link.querySelector('img').src;large.alt=link.querySelector('img').alt;dialog.showModal();}));
 dialog.querySelector('button').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
 </script>
-</body>
+<script id="sv-shared-header-script">
+(()=>{const root=document.getElementById('sv-shared-header'),button=root.querySelector('.sv-shared-toggle'),nav=root.querySelector('.sv-shared-links');
+function close(){nav.classList.remove('open');button.setAttribute('aria-expanded','false');}
+button.addEventListener('click',()=>{const open=nav.classList.toggle('open');button.setAttribute('aria-expanded',String(open));});
+nav.addEventListener('click',e=>{if(e.target.closest('a'))close();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){close();button.focus();}});
+document.addEventListener('click',e=>{if(!root.contains(e.target))close();});
+})();
+</script></body>
 </html>
